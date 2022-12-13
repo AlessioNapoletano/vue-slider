@@ -55,8 +55,8 @@ createApp({
                 console.log(this.currentSelected)
             }, 3000);
         },
-        changeImage(index) {
-            this.currentSelected = index;
+        changeImage(arg) {
+            this.currentSelected = arg;
         }
     },
     mounted() {
