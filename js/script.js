@@ -30,7 +30,7 @@ createApp({
         }
     },
     methods: {
-        nextImage: function () {
+        nextImage() {
             this.currentSelected++;
 
             if (this.currentSelected > this.imagesList.length - 1) {
@@ -38,7 +38,7 @@ createApp({
             }
             console.log(this.currentSelected);
         },
-        backImage: function () {
+        backImage() {
             this.currentSelected--;
 
             if (this.currentSelected === -1) {
@@ -46,14 +46,17 @@ createApp({
             }
             console.log(this.currentSelected);
         },
-        showNextImage: function () {
-            setInterval( () => {
+        showNextImage() {
+            setInterval(() => {
                 this.currentSelected++;
-                if (this.currentSelected === this.imagesList.length){
+                if (this.currentSelected === this.imagesList.length) {
                     this.currentSelected = 0;
                 }
                 console.log(this.currentSelected)
-            }, 5000);
+            }, 3000);
+        },
+        changeImage(index) {
+            this.currentSelected = index;
         }
     },
     mounted() {
