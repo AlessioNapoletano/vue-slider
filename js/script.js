@@ -3,6 +3,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            interval: null,
             currentSelected: 0,
             imagesList: [
                 {
@@ -47,12 +48,8 @@ createApp({
             console.log(this.currentSelected);
         },
         showNextImage() {
-            setInterval(() => {
-                this.currentSelected++;
-                if (this.currentSelected === this.imagesList.length) {
-                    this.currentSelected = 0;
-                }
-                console.log(this.currentSelected)
+            this.interval = setInterval(() => {
+                this.nextImage();
             }, 3000);
         },
         changeImage(arg) {
