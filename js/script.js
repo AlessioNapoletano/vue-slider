@@ -30,22 +30,30 @@ createApp({
         }
     },
     methods: {
-        nextImage: function() {
+        nextImage: function () {
             this.currentSelected++;
-    
-            if (this.currentSelected > this.imagesList.length - 1 ) {
+
+            if (this.currentSelected > this.imagesList.length - 1) {
                 this.currentSelected = 0;
             }
             console.log(this.currentSelected);
         },
-        backImage: function() {
+        backImage: function () {
             this.currentSelected--;
-            
+
             if (this.currentSelected === -1) {
-                this.currentSelected = this.imagesList.length-1;
+                this.currentSelected = this.imagesList.length - 1;
             }
             console.log(this.currentSelected);
+        },
+        showNextImage: function () {
+            setInterval(function () {
+                alert("cambia slide")
+            }, 5000);
         }
+    },
+    mounted() {
+        this.showNextImage()
     }
 
 }).mount("#app")
