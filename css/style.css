@@ -55,10 +55,6 @@
     opacity: 1;
 }
 
-.active {
-    border: 2px solid #ccc;
-    opacity: 1;
-}
 
 .prev,
 .next {
