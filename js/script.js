@@ -47,8 +47,12 @@ createApp({
             console.log(this.currentSelected);
         },
         showNextImage: function () {
-            setInterval(function () {
-                alert("cambia slide")
+            setInterval( () => {
+                this.currentSelected++;
+                if (this.currentSelected === this.imagesList.length){
+                    this.currentSelected = 0;
+                }
+                console.log(this.currentSelected)
             }, 5000);
         }
     },
