@@ -29,8 +29,9 @@
                 <div class="thumbs">
                     <div class="prev" @click="backImage"></div>
                     <div class="next" @click="nextImage"></div>
-                    <div class="thumb active">
-                        <img v-for="image in imagesList" :src="image.image" :alt="image.title"/>
+                    <div  v-for="(image, index) in imagesList" :class=" (index === currentSelected) ? 'active thumb' : 'thumb'">
+                        <!-- condition ? exprIfTrue : exprIfFalse -->
+                        <img :src="image.image" :alt="image.title">
                     </div>
                 </div>
 
