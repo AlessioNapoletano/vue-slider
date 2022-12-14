@@ -29,8 +29,10 @@
                 <div class="thumbs">
                     <div class="prev" @click="backImage()"></div>
                     <div class="next" @click="nextImage()"></div>
-                    <div  v-for="(image, index) in imagesList" :class=" (index === currentSelected) ? 'active thumb' : 'thumb'" @click="changeImage(index)">
-                        <!-- condition ? exprIfTrue : exprIfFalse -->
+                    <div v-for="(image, index) in imagesList"
+                        :class=" (index === currentSelected) ? 'active thumb' : 'thumb'" @click="changeImage(index)"
+                        @mouseover="hover = true" @mouseleave="hover = false" v-if="(hover === true) ? nextImage() : "" ">
+                        <!---->
                         <img :src="image.image" :alt="image.title">
                     </div>
                 </div>

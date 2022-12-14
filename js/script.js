@@ -38,6 +38,8 @@ createApp({
                 this.currentSelected = 0;
             }
             console.log(this.currentSelected);
+            clearInterval(this.interval)
+            this.showNextImage();
         },
         backImage() {
             this.currentSelected--;
@@ -46,6 +48,8 @@ createApp({
                 this.currentSelected = this.imagesList.length - 1;
             }
             console.log(this.currentSelected);
+            clearInterval(this.interval)
+            this.showNextImage();
         },
         showNextImage() {
             this.interval = setInterval(() => {
@@ -54,6 +58,11 @@ createApp({
         },
         changeImage(arg) {
             this.currentSelected = arg;
+            clearInterval(this.interval)
+            this.showNextImage();
+        },
+        stopSlide() {
+            //Stop interval in hover
         }
     },
     mounted() {
